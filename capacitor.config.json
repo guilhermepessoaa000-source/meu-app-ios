@@ -1,0 +1,9 @@
+{
+  "appId": "com.meunome.meuapp",
+  "appName": "CRM | Teste",
+  "webDir": "www",
+  "server": {
+    "url": "https://granprime.org.br/app/",
+    "cleartext": true
+  }
+}
