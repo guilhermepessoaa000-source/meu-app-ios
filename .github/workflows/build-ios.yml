@@ -15,3 +15,9 @@ jobs:
         run: |
           npx cap add ios
           npx cap copy ios
+
+          - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-app-bundle
+          path: ios/App/App.xcarchive # Este é o caminho onde o app foi criado
