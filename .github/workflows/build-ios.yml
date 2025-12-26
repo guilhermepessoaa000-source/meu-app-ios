@@ -4,20 +4,23 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
+
       - name: Install Dependencies
         run: npm install
+
       - name: Capacitor Build
         run: |
           npx cap add ios
           npx cap copy ios
 
-          - name: Upload Build Artifact
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-app-bundle
-          path: ios/App/App.xcarchive # Este é o caminho onde o app foi criado
+          name: ios-project-folder
+          path: ios/App/App # Esta pasta contém o projeto que o Sideloadly vai usar
